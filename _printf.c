@@ -41,7 +41,7 @@ int _printf(char *format, ...)
 		}
 		else
 		{
-			written += _putchar(format[0]);
+			written += _putchar(*format);
 			format++;
 		}
 	}
