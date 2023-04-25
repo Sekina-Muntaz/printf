@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 
 	convert funct_list[] =	{
 		{"c", print_char},
+		{"b", print_binary},
 		{"s", print_string},
 		{"%", print_percent},
 		{"d", print_integer},

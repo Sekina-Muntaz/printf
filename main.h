@@ -18,6 +18,7 @@ struct converter
 };
 typedef struct converter convert;
 
+int print_binary(va_list types);
 
 int _putchar(char c);
 int _printf(const char *format, ...);
