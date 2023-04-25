@@ -2,7 +2,7 @@
 /**
  * print_binary - Prints an unsigned number
  * @types: List of arguments
- * 
+ *
  * Return: Numbers of char printed.
  */
 int print_binary(va_list types)
@@ -26,10 +26,9 @@ int print_binary(va_list types)
 		{
 			char z = '0' + a[i];
 
-			write(1, &z, 1);
+			_putchar(z);
 			count++;
 		}
 	}
 	return (count);
 }
-i
