@@ -1,46 +1,32 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdarg.h>
-#include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
-
+#include <stdarg.h>
+#include <stdint.h>
 /**
- * struct structprint - structure containing
- * @q: the location and method to translate data to characters.
- * @u: print function for specific type.
- *
- * Return: int
+ * struct converter - structure definition
+ * @ch: array of character
+ * @f: a function pointer
  */
-typedef struct structprint
-{
-	char *q;
-	int (*u)(char *format, va_list);
-} structype;
 
-int _putchar(char ch);
+struct converter
+{
+	char *ch;
+	int (*f)(va_list);
+};
+typedef struct converter convert;
+
+
+int _putchar(char c);
 int _printf(const char *format, ...);
-int parser(const char *format, structype funct_list[], va_list args);
-/*
- * int _puts(char *string);
- * int printc(char *format, va_list);
- * int printstr(char *format, va_list);
- * int (*driver(char *format))(char *format, va_list);
- * int _printf(char *format, ...);
- * int printint(char *format, va_list pa);
- * int integer(int number);
- * int contadordigit(int number);
- * int _abs(int number);
- * int printpercent(char *format, va_list pa);
- * int printhex(char *format, va_list);
- * int printHEX(char *format, va_list);
- * int printocta(char *format, va_list);
- * int print_unsign(char *format, va_list);
- */
+void _vprintf(const char *format, va_list args);
+int parser(const char *format, convert funct_list[], va_list args);
 int print_char(va_list);
 int print_string(va_list args);
 int print_percent(va_list);
-int print_unsigned(unsigned int n);
+int print_unsgined(unsigned int n);
 int print_number(va_list);
 int print_integer(va_list);
 #endif
